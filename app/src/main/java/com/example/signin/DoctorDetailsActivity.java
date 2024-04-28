@@ -1,12 +1,14 @@
         package com.example.signin;
 
         import androidx.appcompat.app.AppCompatActivity;
+        import androidx.constraintlayout.widget.ConstraintLayout;
 
         import android.content.Intent;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.AdapterView;
         import android.widget.Button;
+        import android.widget.ImageView;
         import android.widget.ListView;
         import android.widget.SimpleAdapter;
         import android.widget.TextView;
@@ -68,6 +70,7 @@
             ArrayList list;
 
             SimpleAdapter sa;
+            ConstraintLayout bg;
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,7 @@
 
                 tv=findViewById(R.id.textViewCartPackageName);
                 btn=findViewById(R.id.buttonDDBack);
+                bg = findViewById(R.id.constraint_layout);
 
                 Intent it = getIntent();
                 String title = it.getStringExtra("title");
@@ -83,17 +87,21 @@
                 if(title.compareTo("Family Physicians")==0)
                     doctor_details=doctor_details1;
                 else
-                if(title.compareTo("Dietitians")==0)
-                    doctor_details=doctor_details2;
-                else
-                if(title.compareTo("Dentists")==0)
-                    doctor_details=doctor_details3;
-                else
-                if(title.compareTo("Surgeons")==0)
-                    doctor_details=doctor_details4;
-                else
-                    doctor_details=doctor_details5;
-
+                if(title.compareTo("Dietitians")==0) {
+                    bg.setBackgroundResource(R.drawable.nutritionist);
+                    doctor_details = doctor_details2;
+                }else
+                if(title.compareTo("Dentists")==0) {
+                    bg.setBackgroundResource(R.drawable.dentist);
+                    doctor_details = doctor_details3;
+                }else
+                if(title.compareTo("Surgeons")==0) {
+                    bg.setBackgroundResource(R.drawable.surgeon);
+                    doctor_details = doctor_details4;
+                }else {
+                    bg.setBackgroundResource(R.drawable.cardiologist);
+                    doctor_details = doctor_details5;
+                }
 
                 btn.setOnClickListener(view -> startActivity(new Intent(DoctorDetailsActivity.this,FindDoctorActivity.class)));
 
