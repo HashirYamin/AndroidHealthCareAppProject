@@ -30,11 +30,10 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qry3);
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
+
     public void register(String username, String email, String password){
         ContentValues values = new ContentValues();
         values.put("username",username);
@@ -44,6 +43,7 @@ public class Database extends SQLiteOpenHelper {
         db.insert("users",null,values);
         db.close();
     }
+
     public int login(String username, String password){
         int result=0;
         String[] str = new String[2];
@@ -58,15 +58,16 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void addToCart(String username, String product, float price, String otype) {
-            ContentValues cv = new ContentValues();
-            cv.put("username",username);
-            cv.put("product", product);
-            cv.put("price", price);
-            cv.put("otype", otype);
-            SQLiteDatabase db = getWritableDatabase();
-            db.insert("cart", null, cv);
-            db.close();
+        ContentValues cv = new ContentValues();
+        cv.put("username",username);
+        cv.put("product", product);
+        cv.put("price", price);
+        cv.put("otype", otype);
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert("cart", null, cv);
+        db.close();
     }
+
     public int checkCart(String username, String product){
         int result=0;
         String str[] = new String[2];
@@ -80,6 +81,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
         return result;
     }
+
     public void removeCart(String username, String otype){
         String str[] = new String[2];
         str[0] = username;
@@ -89,7 +91,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList getCartData(String username, String otype){
+    public ArrayList<String> getCartData(String username, String otype){
         ArrayList<String> arr = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         String[] str = new String[2];
@@ -124,7 +126,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList getOrderData(String username){
+    public ArrayList<String> getOrderData(String username){
         ArrayList<String> arr = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         String str[] = new String[1];
@@ -138,6 +140,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
         return arr;
     }
+
     public int checkAppointmentExists(String username, String fullname, String address, String contact, String date, String time){
         int result=0;
         String str[] = new String[6];
@@ -154,5 +157,17 @@ public class Database extends SQLiteOpenHelper {
         }
         db.close();
         return result;
+    }
+
+    // New method to delete an order from the order list
+    public void deleteOrder(String username, String fullname, String date, String time) {
+        String str[] = new String[4];
+        str[0] = username;
+        str[1] = fullname;
+        str[2] = date;
+        str[3] = time;
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete("orderplace", "username=? and fullname=? and date=? and time=?", str);
+        db.close();
     }
 }

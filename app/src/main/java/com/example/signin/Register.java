@@ -31,11 +31,15 @@ public class Register extends AppCompatActivity {
         Intent intent = new Intent(Register.this, LoginActivity.class);
         tv.setOnClickListener(view -> startActivity(intent));
         Intent intent1 = new Intent(Register.this,LoginActivity.class);
+
+
         btn.setOnClickListener(view -> {
             String username = edUsername.getText().toString();
             String edEmailReg = edEmail.getText().toString();
             String edPasswordReg = edPassword.getText().toString();
+
             Database db = new Database(getApplicationContext(),"healthcare",null,1);
+
             String edConfirmReg = edConfirm.getText().toString();
             if (username.length() == 0 || edEmailReg.length() == 0 || edPasswordReg.length() == 0 || edConfirmReg.length() == 0) {
                 Toast.makeText(Register.this, "Please fill all the Details", Toast.LENGTH_SHORT).show();

@@ -78,7 +78,6 @@ public class BuyMedicineActivity extends AppCompatActivity {
             new int[] {R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
 
     lst.setAdapter(sa);
-
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -86,7 +85,6 @@ public class BuyMedicineActivity extends AppCompatActivity {
                 it.putExtra("text1",packages[i][0]);
                 it.putExtra("text2",package_details[i]);
                 it.putExtra("text3",packages[i][4]);
-                startActivity(it);
                 startActivity(it);
             }
         });

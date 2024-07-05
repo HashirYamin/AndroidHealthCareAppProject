@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register"
-    android:background="@drawable/bgpurple">
+    android:background="@drawable/regbg">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:textSize="32sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         android:gravity="center"
         android:layout_marginTop="40dp"
         />
@@ -31,16 +31,15 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="@drawable/edit_text_rounded_corners"
         android:hint="@string/username_txt"
         android:minHeight="48dp"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:drawableLeft="@drawable/baseline_person_outline_24"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/baseline_person_24"
         android:drawablePadding="20dp"
-
-        android:drawableStart="@drawable/baseline_person_outline_24"
+        android:drawableStart="@drawable/baseline_person_24"
         tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
     <EditText
         android:id="@+id/email"
@@ -54,15 +53,14 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="@drawable/edit_text_rounded_corners"
         android:hint="@string/em_ail"
         android:minHeight="48dp"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="20dp"
-
         tools:ignore="Autofill,RtlHardcoded,TextFields,VisualLintTextFieldSize" />
     <EditText
         android:id="@+id/password_ct"
@@ -75,16 +73,15 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="@drawable/edit_text_rounded_corners"
         android:inputType="textPassword"
         android:hint="@string/password_txt"
         android:minHeight="48dp"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:drawableLeft="@drawable/baseline_security_24"
         android:drawablePadding="20dp"
-
         tools:ignore="Autofill,VisualLintTextFieldSize"
         android:drawableStart="@drawable/baseline_security_24" />
     <EditText
@@ -98,13 +95,13 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="@drawable/edit_text_rounded_corners"
         android:hint="@string/re_type_password_txt"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:drawableLeft="@drawable/baseline_security_24"
         android:drawablePadding="20dp"
         tools:ignore="Autofill,VisualLintTextFieldSize"
@@ -130,11 +127,13 @@
 
     <TextView
         android:id="@+id/txt"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:text="@string/already_txt"
-        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:background="@drawable/edit_text_rounded_corners"
         android:layout_below="@id/linear_material_btn"
         android:gravity="center"
         android:layout_marginTop="5dp"

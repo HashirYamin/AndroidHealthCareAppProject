@@ -27,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
             editor.putBoolean("flag",false);
             editor.apply();
             startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+            finish();
         });
         CardView findDoctor = findViewById(R.id.cardFindDoctor);
         findDoctor.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this,FindDoctorActivity.class)));
@@ -38,13 +39,10 @@ public class HomeActivity extends AppCompatActivity {
         orderDetails.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, OrderDetailsActivity.class)));
 
         CardView buyMedicine = findViewById(R.id.cardBuyMedical);
-        buyMedicine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,BuyMedicineActivity.class));
-            }
-        });
+        buyMedicine.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,BuyMedicineActivity.class)));
 
+        CardView health = findViewById(R.id.cardHealthDoctor);
+        health.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, HealthArticlesActivity.class)));
     }
 
 }
