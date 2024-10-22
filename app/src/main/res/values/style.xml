@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LoginTheme" parent="Theme.Material3.Light.NoActionBar"
+        >
+
+        <item name="colorPrimary">#EC1414</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+</resources>

@@ -19,40 +19,25 @@
         android:layout_marginRight="12dp"
         android:layout_marginBottom="12dp"
         android:text="@string/app_name_home"
-        android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
         tools:ignore="TextContrastCheck" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/title_home"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:columnCount="2"
-        android:layout_centerHorizontal="true"
-        android:rowCount="3"
-        tools:ignore="UselessLeaf">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="600dp"
+        android:layout_below="@+id/title_home"
+        android:layout_marginTop="30dp">
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardLabTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/blur_bg"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginLeft="20dp"
+            app:cardBackgroundColor="@color/trans_white"
             app:cardCornerRadius="10dp"
-            app:cardElevation="7dp"
-            app:cardUseCompatPadding="true"
             tools:targetApi="lollipop">
 
             <LinearLayout
@@ -64,10 +49,10 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/baseline_home_24"
+                    android:src="@drawable/result"
                     tools:ignore="ImageContrastCheck" />
 
                 <TextView
@@ -75,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/lab_test"
+                    android:textSize="20dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -83,17 +69,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardBuyMedical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/blur_bg"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            app:cardBackgroundColor="@color/trans_white"
             app:cardCornerRadius="10dp"
-            app:cardElevation="7dp"
-            app:cardUseCompatPadding="true"
             tools:targetApi="lollipop">
 
             <LinearLayout
@@ -105,10 +86,10 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/baseline_medical_services_24"
+                    android:src="@drawable/drugs"
                     tools:ignore="ImageContrastCheck" />
 
                 <TextView
@@ -116,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/medicins"
+                    android:textSize="20dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -124,18 +106,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardFindDoctor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/blur_bg"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_below="@+id/cardLabTest"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/trans_white"
             app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
             tools:targetApi="lollipop">
 
             <LinearLayout
@@ -147,34 +124,33 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_chat_24"
-                    android:contentDescription="@string/todo" />
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/doctor" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/find_doctor"
+                    android:textSize="20dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardHealthDoctor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/blur_bg"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_below="@+id/cardBuyMedical"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:cardBackgroundColor="@color/trans_white"
             app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:cardUseCompatPadding="true"
             tools:targetApi="lollipop">
 
             <LinearLayout
@@ -186,34 +162,33 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_article_24"
-                    android:contentDescription="@string/todo" />
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/article" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
+                    android:textSize="20dp"
                     android:text="@string/health_articles"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardOrderDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/blur_bg"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_below="@+id/cardFindDoctor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+
+            app:cardBackgroundColor="@color/trans_white"
             app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
-            app:cardUseCompatPadding="true"
             tools:targetApi="lollipop">
 
             <LinearLayout
@@ -225,10 +200,10 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/baseline_widgets_24"
+                    android:src="@drawable/menu"
                     tools:ignore="ImageContrastCheck" />
 
                 <TextView
@@ -237,23 +212,23 @@
                     android:gravity="center_horizontal"
                     android:text="@string/order_details"
                     android:textAlignment="center"
+                    android:textSize="20dp"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardExit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/blur_bg"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+
+            android:layout_below="@+id/cardHealthDoctor"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:cardBackgroundColor="@color/trans_white"
             app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
-            app:cardUseCompatPadding="true"
             tools:targetApi="lollipop">
 
             <LinearLayout
@@ -266,10 +241,10 @@
 
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/baseline_exit_to_app_24"
+                    android:src="@drawable/logot"
                     tools:ignore="ImageContrastCheck" />
 
                 <TextView
@@ -277,11 +252,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/log_out"
+                    android:textSize="20dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </GridLayout>
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

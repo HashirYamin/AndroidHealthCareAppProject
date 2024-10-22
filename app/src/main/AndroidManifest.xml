@@ -71,6 +71,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
+            android:theme="@style/LoginnewTheme"
             android:exported="true" />
     </application>
 

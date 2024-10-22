@@ -74,7 +74,7 @@ public class Database extends SQLiteOpenHelper {
         str[0] = username;
         str[1] = product;
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("Select * from cart where username = ? and product = ?",str);
+        Cursor c = db.rawQuery  ("Select * from cart where username = ? and product = ?",str);
         if(c.moveToFirst()){
             result=1;
         }

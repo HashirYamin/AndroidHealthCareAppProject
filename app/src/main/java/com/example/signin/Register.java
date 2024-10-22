@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class Register extends AppCompatActivity {
 
     EditText edUsername, edEmail, edPassword, edConfirm;
-    Button btn;
+    Button btn, back;
     TextView tv;
 
     @Override
@@ -26,12 +26,14 @@ public class Register extends AppCompatActivity {
         edPassword = findViewById(R.id.password_ct);
         edConfirm = findViewById(R.id.Re_type_pass);
         btn = findViewById(R.id.signup_btn);
-        tv = findViewById(R.id.txt);
+        back = findViewById(R.id.create_acc_back);
 
         Intent intent = new Intent(Register.this, LoginActivity.class);
-        tv.setOnClickListener(view -> startActivity(intent));
-        Intent intent1 = new Intent(Register.this,LoginActivity.class);
 
+
+        back.setOnClickListener(v->{
+            startActivity(intent);
+        });
 
         btn.setOnClickListener(view -> {
             String username = edUsername.getText().toString();
@@ -48,7 +50,7 @@ public class Register extends AppCompatActivity {
                     if(isValid(edPasswordReg)){
                         db.register(username,edEmailReg,edPasswordReg);
                         Toast.makeText(Register.this, "Account Created plz Login to Continue", Toast.LENGTH_SHORT).show();
-                        startActivity(intent1);
+                        startActivity(intent);
                     }
                     else {
                         Toast.makeText(Register.this, "Password must contain at least 8 characters, having letter, digit and special symbol", Toast.LENGTH_SHORT).show();

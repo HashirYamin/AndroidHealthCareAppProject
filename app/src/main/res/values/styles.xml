@@ -4,4 +4,38 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
+
+    <style name="LoginnewTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Window attributes -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#FDFDFD</item>
+<!--        <item name="android:navigationBarColor">#004BE1</item>-->
+
+        <!-- Primary and Accent colors -->
+        <item name="colorPrimary">#004BE1</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#FFFFFF</item>
+
+        <!-- Surface and Background colors -->
+        <item name="colorSurface">#F3F3F3</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#757575</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@style/Widget.Material3.Button</item>
+
+<!--        &lt;!&ndash; Elevation and shadows &ndash;&gt;-->
+<!--        <item name="android:elevation">4dp</item>-->
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/robotoblack</item>
+
+
+
+
+    </style>
+
 </resources>

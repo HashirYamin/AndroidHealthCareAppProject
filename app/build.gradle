@@ -43,6 +43,10 @@ dependencies {
     androidTestImplementation 'com.android.support.design:28.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22" //this dependency
     implementation 'androidx.core:core-ktx:1.13.0' //and this
+    //responsive size UI
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+    //responsive size texts
+    implementation 'com.intuit.ssp:ssp-android:1.1.1'
 }
 configurations.all {
     resolutionStrategy {

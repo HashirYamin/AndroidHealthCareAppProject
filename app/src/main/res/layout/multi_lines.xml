@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@drawable/items_bg"
     android:padding="8dp"
     >
     <TextView
@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="italic"
+        android:textStyle="italic|bold"
         />
 
     <TextView
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/YellowLight"
+        android:textColor="@color/black"
         android:textSize="14sp"
         />
     <LinearLayout
@@ -37,7 +37,7 @@
             android:layout_weight="0.20"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textColor="@color/YellowLight"
+            android:textColor="@color/black"
             android:textSize="12sp"
             />
         <TextView
@@ -46,7 +46,7 @@
             android:layout_weight="0.50"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textColor="@color/YellowLight"
+            android:textColor="@color/black"
             android:textSize="12sp"
             />
         <TextView
@@ -55,7 +55,7 @@
             android:layout_weight="0.30"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textColor="@color/YellowLight"
+            android:textColor="@color/black"
             android:textSize="12sp"
             />
 

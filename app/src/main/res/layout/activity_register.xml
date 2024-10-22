@@ -112,62 +112,28 @@
     android:id="@+id/linear_material_btn"
     android:gravity="center"
     android:layout_below="@+id/Re_type_pass"
+    android:orientation="vertical"
     android:layout_marginTop="10dp"
     >
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signup_btn"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-
         android:gravity="center"
+        app:cornerRadius="10dp"
         android:text="@string/sign_in"
+        android:backgroundTint="@color/black"
         android:textSize="22sp" />
+
+
 </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/txt"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/create_acc_back"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="@string/already_txt"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/black"
-        android:background="@drawable/edit_text_rounded_corners"
-        android:layout_below="@id/linear_material_btn"
-        android:gravity="center"
-        android:layout_marginTop="5dp"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_below="@+id/txt"
+        android:backgroundTint="@color/black"
         android:layout_marginTop="10dp"
-        >
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/fb_icon"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/github_icon"
-            tools:ignore="ContentDescription,ImageContrastCheck" />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/twitter_icon_png"
-            tools:ignore="ContentDescription,ImageContrastCheck" />
-    </LinearLayout>
-
+        android:layout_marginStart="10dp"
+        android:background="@drawable/baseline_arrow_back_24"/>
 
 </RelativeLayout>
