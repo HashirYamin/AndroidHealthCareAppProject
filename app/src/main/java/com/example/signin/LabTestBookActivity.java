@@ -14,7 +14,8 @@ import android.widget.Toast;
 public class LabTestBookActivity extends AppCompatActivity {
 
     EditText edname, edaddress, edcontact, edpincode;
-    Button btnBooking, btnBack;
+    Button btnBooking, btnLabAppointBack ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,18 @@ public class LabTestBookActivity extends AppCompatActivity {
         edcontact = findViewById(R.id.editTextBAContactNo);
         edpincode = findViewById(R.id.editTextBAFees);
         btnBooking = findViewById(R.id.buttonBABooking);
+        btnLabAppointBack = findViewById(R.id.book_lab_appoint_back);
 
         Intent intent = getIntent();
         String[] price = intent.getStringExtra("price").toString().split(java.util.regex.Pattern.quote(":"));
         String date = intent.getStringExtra("date");
         String time = intent.getStringExtra("time");
+
+        Intent intent2 = new Intent(LabTestBookActivity.this, LaBTestDetailsActivity.class);
+        btnLabAppointBack.setOnClickListener(v->{
+            startActivity(intent2);
+        });
+
 
         btnBooking.setOnClickListener(new View.OnClickListener() {
             @Override

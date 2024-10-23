@@ -20,45 +20,59 @@
             android:exported="false" />
         <activity
             android:name=".BuyMedicineBookActivity"
+            android:theme="@style/buymedicineTheme"
             android:exported="false" />
         <activity
             android:name=".CartBuyMedicineActivity"
+            android:theme="@style/buymedicineTheme"
             android:exported="false" />
         <activity
             android:name=".BuyMedicineDetailsActivity"
+            android:theme="@style/buymedicineTheme"
             android:exported="false" />
         <activity
             android:name=".BuyMedicineActivity"
+            android:theme="@style/buymedicineTheme"
             android:exported="false" />
         <activity
             android:name=".OrderDetailsActivity"
+            android:theme="@style/Ordertheme"
             android:exported="false" />
         <activity
             android:name=".LabTestBookActivity"
+            android:theme="@style/Labtheme"
             android:exported="false" />
         <activity
             android:name=".CartLabActivity"
+            android:theme="@style/Labtheme"
             android:exported="false" />
         <activity
             android:name=".LaBTestDetailsActivity"
+            android:theme="@style/Labtheme"
             android:exported="false" />
         <activity
             android:name=".LabTestActivity"
+            android:theme="@style/Labtheme"
             android:exported="false" />
         <activity
             android:name=".BookAppointmentActivity"
+            android:theme="@style/doctostheme"
             android:exported="false" />
         <activity
             android:name=".DoctorDetailsActivity"
+            android:theme="@style/doctostheme"
             android:exported="false" />
         <activity
             android:name=".FindDoctorActivity"
+            android:theme="@style/LoginnewTheme"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
+            android:theme="@style/LoginnewTheme"
             android:exported="false" />
         <activity
             android:name=".Register"
+            android:theme="@style/LoginnewTheme"
             android:exported="false" />
         <activity
             android:name=".LoginAppSplashScreen"

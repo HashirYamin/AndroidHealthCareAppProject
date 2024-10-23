@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class BuyMedicineBookActivity extends AppCompatActivity {
     EditText edname, edaddress, edcontact, edpincode;
-    Button btnBooking, btnBack;
+    Button btnBooking, btnMedBack, btnBookAppoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +25,15 @@ public class BuyMedicineBookActivity extends AppCompatActivity {
         edcontact = findViewById(R.id.editTextBMBContact);
         edpincode = findViewById(R.id.editTextBMBPinCode);
         btnBooking = findViewById(R.id.buttonBMBBooking);
+        btnMedBack = findViewById(R.id.book_med_back);
 
         Intent intent = getIntent();
         String[] price = intent.getStringExtra("price").toString().split(java.util.regex.Pattern.quote(":"));
         String date = intent.getStringExtra("date");
+
+        btnMedBack.setOnClickListener(v->{
+            startActivity(new Intent(this, CartBuyMedicineActivity.class));
+        });
 
         btnBooking.setOnClickListener(new View.OnClickListener() {
             @Override

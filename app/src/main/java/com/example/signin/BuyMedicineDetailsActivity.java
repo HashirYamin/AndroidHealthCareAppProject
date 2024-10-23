@@ -14,8 +14,7 @@ import android.widget.Toast;
 
 public class BuyMedicineDetailsActivity extends AppCompatActivity {
 
-    TextView tvPackageName, tvTotalCost;
-    EditText edDetails;
+    TextView tvPackageName, tvTotalCost,edDetails;
     Button btnBack, btnAddToCart;
 
     @Override

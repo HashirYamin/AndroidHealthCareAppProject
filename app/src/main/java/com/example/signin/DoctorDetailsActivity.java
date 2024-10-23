@@ -60,7 +60,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> filteredList;
 
     SimpleAdapter sa;
-    SearchView searchView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
 
         tv = findViewById(R.id.textViewCartPackageName);
         btn = findViewById(R.id.buttonDDBack);
-        searchView = findViewById(R.id.searchView); // This should match the ID in the XML layout
+
 
         Intent it = getIntent();
         String title = it.getStringExtra("title");
@@ -124,19 +124,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             startActivity(it1);
         });
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                filterList(query);
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filterList(newText);
-                return false;
-            }
-        });
     }
 
     private void filterList(String query) {

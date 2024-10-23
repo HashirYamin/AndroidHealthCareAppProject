@@ -23,7 +23,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
 
     EditText ed1, ed2,ed3, ed4;
     TextView tv;
-    Button backBtn;
+    Button backBtn, bookDocAppointBack;
 
     Button btnBook;
     private DatePickerDialog datePickerDialog;
@@ -45,6 +45,8 @@ public class BookAppointmentActivity extends AppCompatActivity {
         timeButton=findViewById(R.id.buttonBATime);
         btnBook=findViewById(R.id.buttonBABooking);
         backBtn=findViewById(R.id.buttonBackAppointment);
+        bookDocAppointBack =findViewById(R.id.doc_book_app_back);
+
 
         ed1.setKeyListener(null);
         ed2.setKeyListener(null);
@@ -64,55 +66,40 @@ public class BookAppointmentActivity extends AppCompatActivity {
         ed3.setText(contact);
         ed4.setText("Consultant Fees: "+ fees +"/-");
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(BookAppointmentActivity.this,DoctorDetailsActivity.class));
-            }
+
+        Intent intent = new Intent(BookAppointmentActivity.this, DoctorDetailsActivity.class);
+        backBtn.setOnClickListener(view -> {
+            startActivity(intent);
         });
 
-        btnBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Database db = new Database(getApplicationContext(),"healthcare", null,1);
-                SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-                String username = sharedPreferences.getString("username", "").toString();
-                if(db.checkAppointmentExists(username,title+"=>"+fullname,address,contact,dateButton.getText().toString(),timeButton.getText().toString())==1){
-                    Toast.makeText(getApplicationContext(), "Appointment already booked plz select another slot", Toast.LENGTH_SHORT).show();
-                }else {
-                    db.addOrder(username,title+"=>"+fullname,address,contact,0,dateButton.getText().toString(),timeButton.getText().toString(),Float.parseFloat(fees),"appointment");
-                    Toast.makeText(getApplicationContext(), "Your appointment is done successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(BookAppointmentActivity.this,HomeActivity.class) );
-                }
+
+        bookDocAppointBack.setOnClickListener(view -> startActivity(intent));
+        btnBook.setOnClickListener(view -> {
+            Database db = new Database(getApplicationContext(),"healthcare", null,1);
+            SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+            String username = sharedPreferences.getString("username", "").toString();
+            if(db.checkAppointmentExists(username,title+"=>"+fullname,address,contact,dateButton.getText().toString(),timeButton.getText().toString())==1){
+                Toast.makeText(getApplicationContext(), "Appointment already booked plz select another slot", Toast.LENGTH_SHORT).show();
+            }else {
+                db.addOrder(username,title+"=>"+fullname,address,contact,0,dateButton.getText().toString(),timeButton.getText().toString(),Float.parseFloat(fees),"appointment");
+                Toast.makeText(getApplicationContext(), "Your appointment is done successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(BookAppointmentActivity.this,HomeActivity.class) );
             }
         });
         initDatePicker();
-        dateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                datePickerDialog.show();
-            }
-        });
+        dateButton.setOnClickListener(view -> datePickerDialog.show());
 
         initTimePicker();
-        timeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                timePickerDialog.show();
-            }
-        });
+        timeButton.setOnClickListener(view -> timePickerDialog.show());
 
 
 
 
         }
         public void initDatePicker(){
-            DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    i1=i1+1;
-                    dateButton.setText(i2+"/"+i1+"/"+i);
-                }
+            DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, i, i1, i2) -> {
+                i1=i1+1;
+                dateButton.setText(i2+"/"+i1+"/"+i);
             };
             Calendar cal = Calendar.getInstance();
             int year = cal.get(Calendar.YEAR);
@@ -124,12 +111,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
             datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis()+86400000);
         }
         public void initTimePicker(){
-            TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-                @Override
-                public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                    timeButton.setText(i+":"+i1);
-                }
-            };
+            TimePickerDialog.OnTimeSetListener timeSetListener = (timePicker, i, i1) -> timeButton.setText(i+":"+i1);
 
             Calendar cal = Calendar.getInstance();
             int hrs = cal.get(Calendar.HOUR);

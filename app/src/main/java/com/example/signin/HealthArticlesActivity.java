@@ -23,7 +23,7 @@ public class HealthArticlesActivity extends AppCompatActivity {
                     {"Home Care of Covid-19", "", "", "", "Click more details"},
                     {"Stop Smoking", "", "", "", "Click more details"},
                     {"Healthy Diet", "", "", "", "Click more details"},
-                    {"Exercise", "", "", "", "Click more details"}
+                    {"Exercise", "", "", "", "Click For more details"}
             };
 
     private int[] images = {

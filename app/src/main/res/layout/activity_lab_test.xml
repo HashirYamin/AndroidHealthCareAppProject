@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LaBTestDetailsActivity"
-    android:background="@color/light_blue_600"
+    android:background="#FFFACD"
     >
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/_24_7_healthcare"
-        android:textColor="@color/purple_200"
+        android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +60,10 @@
         android:layout_margin="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:padding="10dp"
         android:layout_marginEnd="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/_10sdp"
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

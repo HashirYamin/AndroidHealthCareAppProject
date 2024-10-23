@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BuyMedicineActivity extends AppCompatActivity {
+    Button backMedicine;
     private String[][] packages = {
             {"Uprise-D3 1000IU Capsule", "", "", "", "50"},
             {"Uprise-D3 1000IU Capsule", "", "", "", "50"},
@@ -53,8 +54,14 @@ public class BuyMedicineActivity extends AppCompatActivity {
     lst = findViewById(R.id.listViewBM);
     btnBack = findViewById(R.id.buttonBMBack);
     btnGoToCart = findViewById(R.id.buttonBMGoToCart);
+    backMedicine = findViewById(R.id.back_medicine);
 
-
+    backMedicine.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(BuyMedicineActivity.this , HomeActivity.class));
+        }
+    });
     btnGoToCart.setOnClickListener(v -> {
         startActivity(new Intent(BuyMedicineActivity.this,CartBuyMedicineActivity.class));
     });
@@ -78,15 +85,12 @@ public class BuyMedicineActivity extends AppCompatActivity {
             new int[] {R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
 
     lst.setAdapter(sa);
-        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent it = new Intent(BuyMedicineActivity.this, BuyMedicineDetailsActivity.class);
-                it.putExtra("text1",packages[i][0]);
-                it.putExtra("text2",package_details[i]);
-                it.putExtra("text3",packages[i][4]);
-                startActivity(it);
-            }
+        lst.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent it = new Intent(BuyMedicineActivity.this, BuyMedicineDetailsActivity.class);
+            it.putExtra("text1",packages[i][0]);
+            it.putExtra("text2",package_details[i]);
+            it.putExtra("text3",packages[i][4]);
+            startActivity(it);
         });
     }
 }

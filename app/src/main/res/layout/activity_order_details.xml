@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderDetailsActivity"
-    android:background="@color/light_blue_A200"
+    android:background="#E6F7FF"
     >
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="@string/_24_7_healthcare"
-        android:textColor="@color/purple_200"
+        android:textColor="#4D798E"
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="@string/order_details"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,6 +50,10 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/order_detail_txt"
         app:layout_constraintTop_toTopOf="parent"
+        android:scrollbars="none"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/_10sdp"
         app:layout_constraintVertical_bias="0.552" />
 
     <Button

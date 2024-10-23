@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue_600"
-    tools:context=".LabTestActivity"
+    android:background="#FFFACD"
+    tools:context=".LaBTestDetailsActivity"
     tools:ignore="ExtraText">
 
 
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="@string/lab_test_and_package"
-        android:textColor="@color/YellowLight"
+        android:textColor="#00B312"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listViewCLCart"
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="492dp"
         android:text="@string/lab_test_and_package"
-        android:textColor="@color/YellowLight"
+        android:textColor="#00B312"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonBMDAddToCart"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/listViewCLCart"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
+    <TextView
         android:id="@+id/listViewCLCart"
         android:layout_width="290dp"
         android:layout_height="372dp"
@@ -108,7 +108,7 @@
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:text="@string/hi_nhello"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

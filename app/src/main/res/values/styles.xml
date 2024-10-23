@@ -9,11 +9,11 @@
         <item name="android:windowLightStatusBar">true</item>
         <!-- Window attributes -->
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">#FDFDFD</item>
+        <item name="android:statusBarColor">#A1DDFF</item>
 <!--        <item name="android:navigationBarColor">#004BE1</item>-->
 
         <!-- Primary and Accent colors -->
-        <item name="colorPrimary">#004BE1</item>
+        <item name="colorPrimary">#A1DDFF</item>
         <item name="colorPrimaryDark">#FFFFFF</item>
         <item name="colorAccent">#FFFFFF</item>
 
@@ -37,5 +37,121 @@
 
 
     </style>
+    <style name="buymedicineTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Window attributes -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#83E3E3</item>
+        <!--        <item name="android:navigationBarColor">#004BE1</item>-->
 
+        <!-- Primary and Accent colors -->
+        <item name="colorPrimary">#305454</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#FFFFFF</item>
+
+        <!-- Surface and Background colors -->
+        <item name="colorSurface">#F3F3F3</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#757575</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@style/Widget.Material3.Button</item>
+
+        <!--        &lt;!&ndash; Elevation and shadows &ndash;&gt;-->
+        <!--        <item name="android:elevation">4dp</item>-->
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/robotoblack</item>
+
+    </style>
+    <style name="doctostheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Window attributes -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#89CFF0</item>
+        <!--        <item name="android:navigationBarColor">#004BE1</item>-->
+
+        <!-- Primary and Accent colors -->
+        <item name="colorPrimary">#3F5E6D</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#FFFFFF</item>
+
+        <!-- Surface and Background colors -->
+        <item name="colorSurface">#F3F3F3</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#757575</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@style/Widget.Material3.Button</item>
+
+        <!--        &lt;!&ndash; Elevation and shadows &ndash;&gt;-->
+        <!--        <item name="android:elevation">4dp</item>-->
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/robotoblack</item>
+
+    </style>
+    <style name="Labtheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Window attributes -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#FFFACD</item>
+        <!--        <item name="android:navigationBarColor">#004BE1</item>-->
+
+        <!-- Primary and Accent colors -->
+        <item name="colorPrimary">#646146</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#FFFFFF</item>
+
+        <!-- Surface and Background colors -->
+        <item name="colorSurface">#F3F3F3</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#757575</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@style/Widget.Material3.Button</item>
+
+        <!--        &lt;!&ndash; Elevation and shadows &ndash;&gt;-->
+        <!--        <item name="android:elevation">4dp</item>-->
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/robotoblack</item>
+
+    </style>
+
+    <style name="Ordertheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Window attributes -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#E6F7FF</item>
+        <!--        <item name="android:navigationBarColor">#004BE1</item>-->
+
+        <!-- Primary and Accent colors -->
+        <item name="colorPrimary">#274553</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#FFFFFF</item>
+
+        <!-- Surface and Background colors -->
+        <item name="colorSurface">#F3F3F3</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#757575</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@style/Widget.Material3.Button</item>
+
+        <!--        &lt;!&ndash; Elevation and shadows &ndash;&gt;-->
+        <!--        <item name="android:elevation">4dp</item>-->
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/robotoblack</item>
+
+    </style>
 </resources>

@@ -2,7 +2,13 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.SignIn" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/white</item> <!-- White color for the status bar -->
-        <item name="android:windowLightStatusBar">true</item> <!-- Enables dark icons in the status bar --><!-- Enables dark icons in the navigation bar -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="colorPrimary">#89CFF0</item>
+        <item name="colorSecondary">#89CFF0</item>
+        <item name="colorAccent">#89CFF0</item>
+
+        <!-- Enables dark icons in the status bar --><!-- Enables dark icons in the navigation bar -->
     </style>
 
     <style name="Theme.SignIn" parent="Base.Theme.SignIn" />

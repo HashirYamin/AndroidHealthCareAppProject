@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class LaBTestDetailsActivity extends AppCompatActivity {
 
     TextView tvPackageName, tvTotalCost;
-    EditText edDetails;
+    TextView edDetails;
     Button btnAddToCart, btnBack;
 
     @Override

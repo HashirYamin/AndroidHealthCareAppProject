@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_traffic"
+    android:background="#A1DDFF"
     tools:context=".LoginActivity"
     >
 <RelativeLayout
@@ -21,27 +21,23 @@
         android:layout_above="@id/card_view"
         android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:padding="28dp">
+        android:background="@drawable/doctorbgh"
+        android:padding="@dimen/_2sdp">
 
         <ImageView
             android:id="@+id/loc"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="156dp"
-            android:layout_marginLeft="156dp"
-            android:layout_marginTop="1dp"
-            android:src="@drawable/baseline_play_arrow_24"
-            tools:ignore="ContentDescription" />
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_60sdp"
+            android:src="@drawable/baseline_play_arrow_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/loc"
-            android:layout_centerHorizontal="true"
             android:text="24/7 Health Care"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="@dimen/_27ssp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -49,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:cardCornerRadius="28dp"
+        app:cardCornerRadius="@dimen/_23sdp"
         android:layout_marginBottom="-20dp"
         android:id="@+id/card_view"
         tools:ignore="VisualLintBounds">
@@ -57,22 +53,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="28dp"
+            android:padding="@dimen/_23sdp"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/wel_txt"
-                android:textColor="#004BE1"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
+                android:textColor="#3879FB"
                 android:textSize="32sp"
                 android:textStyle="bold"
                 />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+                android:layout_height="@dimen/_22sdp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,19 +89,18 @@
                 android:drawableEnd="@drawable/done_icon"
                 android:drawableRight="@drawable/done_icon"
                 android:inputType="text"
-                android:minHeight="48dp"
+                android:minHeight="@dimen/_42sdp"
                 tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,VisualLintTextFieldSize"
                 />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+                android:layout_height="@dimen/_19sdp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/password_txt"
-
                 android:textColor="#004BE1"
                 android:alpha="0.7"
                 android:textStyle="bold"
@@ -124,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:minHeight="48dp"
+                    android:minHeight="@dimen/_42sdp"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -151,18 +144,18 @@
             </RelativeLayout>
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"/>
+                android:layout_height="@dimen/_7sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/login_btn"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="@dimen/_50sdp"
                 android:text="@string/Login_txt"
                 tools:ignore="VisualLintButtonSize" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"/>
+                android:layout_height="@dimen/_5sdp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -172,14 +165,14 @@
             <Button
                 android:id="@+id/myButton"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:text="@string/click_here"
                 android:textColor="#FFFFFF"
             />
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"/>
+                android:layout_height="@dimen/_40sdp"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
