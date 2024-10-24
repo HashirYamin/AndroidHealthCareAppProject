@@ -2,80 +2,101 @@ package com.example.signin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.progressindicator.LinearProgressIndicator;
+import com.kwabenaberko.newsapilib.NewsApiClient;
+import com.kwabenaberko.newsapilib.models.Article;
+import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
+import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class HealthArticlesActivity extends AppCompatActivity {
 
-    private String[][] health_details =
-            {
-                    {"Walking Daily", "", "", "", "Click more details"},
-                    {"Home Care of Covid-19", "", "", "", "Click more details"},
-                    {"Stop Smoking", "", "", "", "Click more details"},
-                    {"Healthy Diet", "", "", "", "Click more details"},
-                    {"Exercise", "", "", "", "Click For more details"}
-            };
+    RecyclerView recyclerView;
+    List<Article> articleList;
+    NewsRecyclerAdapter adapter;
+    LinearProgressIndicator progressIndicator;
 
-    private int[] images = {
-            R.drawable.walk,
-            R.drawable.homecare,
-            R.drawable.stopsmoking,
-            R.drawable.diet,
-            R.drawable.exercise
-    };
-
-    HashMap<String,String> item;
-    ArrayList list;
-    SimpleAdapter sa;
-
-    Button back;
-    ListView lst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_articles);
 
+        articleList = new ArrayList<>();
 
-        lst = findViewById(R.id.health_article_list);
-        back = findViewById(R.id.btn_back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HealthArticlesActivity.this, HomeActivity.class));
-            }
-        });
+        recyclerView = findViewById(R.id.news_recycler_view);
+        progressIndicator = findViewById(R.id.progress_bar_health);
 
-        list = new ArrayList();
-        for (int i=0;i<health_details.length;i++){
-            item = new HashMap<String,String>();
-            item.put("line1",health_details[i][0]);
-            item.put("line2",health_details[i][1]);
-            item.put("line3",health_details[i][2]);
-            item.put("line4",health_details[i][3]);
-            item.put("line5",health_details[i][4]);
-            list.add(item);
-        }
+        setupRecyclerView();
+        getNews();
 
-        sa = new SimpleAdapter(this,list,
-                R.layout.health_article_items,
-                new String[]{"line1","line2","line3","line4","line5"},
-                new int[]{R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e});
-        lst.setAdapter(sa);
-        lst.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent it1 = new Intent(HealthArticlesActivity.this, HealthArticlesDetails.class);
-            it1.putExtra("text2",images[i]);
-            startActivity(it1);
-        });
     }
+
+    void setupRecyclerView(){
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new NewsRecyclerAdapter(articleList);
+        recyclerView.setAdapter(adapter);
+    }
+
+    void changeInProgress(boolean show){
+        if(show)
+            progressIndicator.setVisibility(View.VISIBLE);
+        else
+            progressIndicator.setVisibility(View.INVISIBLE);
+    }
+
+    void getNews(){
+        changeInProgress(true);
+        NewsApiClient newsApiClient = new NewsApiClient("638e09c9d8df4924a82a40a77454fcae");
+        newsApiClient.getTopHeadlines(
+                new TopHeadlinesRequest.Builder()
+                        .language("en")
+                        .build(),
+                new NewsApiClient.ArticlesResponseCallback() {
+                    @Override
+                    public void onSuccess(ArticleResponse response) {
+                        runOnUiThread(() -> {
+                            changeInProgress(false); // Hide the progress indicator
+                            articleList = response.getArticles();
+                            if (articleList != null) {
+                                adapter.updateData(articleList); // Update the RecyclerView with new data
+                            }
+                        });
+                    }
+
+//                    @Override
+//                    public void onSuccess(ArticleResponse response) {
+//                       runOnUiThread(()->{
+//                           changeInProgress(false);
+//                           articleList = response.getArticles();
+//                           adapter.updateData(articleList);
+//                           adapter.notifyDataSetChanged();
+//                       });
+//                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable) {
+                        Log.i("GOT FAILURE",throwable.getMessage());
+                    }
+                }
+        );
+    }
+
 }

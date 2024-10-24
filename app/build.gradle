@@ -47,6 +47,10 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.1'
     //responsive size texts
     implementation 'com.intuit.ssp:ssp-android:1.1.1'
+    implementation 'com.github.KwabenBerko:News-API-Java:1.0.2'
+
+    //picasso library dependency
+    implementation 'com.squareup.picasso:picasso:2.8'
 }
 configurations.all {
     resolutionStrategy {
